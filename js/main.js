@@ -32,6 +32,9 @@ function addTodo(todo) {
   // <li> 생성
   const li = document.createElement('li');
 
+  // id 부착
+  li.setAttribute('data-id', todo.id);
+
   // 내용 채우기
   li.innerHTML = `
   <span>${todo.task}</span>
@@ -42,3 +45,16 @@ function addTodo(todo) {
   // <ul> 의 자식으로 편입
   todoList.appendChild(li);
 }
+
+// <ul> 에 삭제 이벤트 추가
+todoList.addEventListener('click', (e) => {
+  // 클릭된 요소가 삭제 버튼인지 확인
+  if (e.target.classList.contains('delete-btn')) {
+    // 버튼의 부모인 <li> 요소를 찾아 삭제
+    const li = e.target.parentElement;
+    const idToDelete = li.getAttribute('data-id');
+    
+    console.log(`ID ${idToDelete}를 삭제합니다.`);
+    li.remove();
+  }
+})
