@@ -17,6 +17,28 @@ todoForm.addEventListener('submit', (e) => {
 
   console.log("생성된 객체: ", todoObject);
 
+  // todo list 에 추가
+  addTodo(todoObject);
+
   // 입력창 비우기
   todoForm.reset();
 })
+
+// ul 가져오기
+const todoList = document.querySelector('#todo-list');
+
+// list 에 아이템 추가
+function addTodo(todo) {
+  // <li> 생성
+  const li = document.createElement('li');
+
+  // 내용 채우기
+  li.innerHTML = `
+  <span>${todo.task}</span>
+  <small>${todo.priority}</small>
+  <button class="delete-btn">X</button>
+  `;
+
+  // <ul> 의 자식으로 편입
+  todoList.appendChild(li);
+}
