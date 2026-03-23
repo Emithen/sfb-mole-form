@@ -3,9 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Todo</title>
 </head>
 <body>
-  ! 공사중 !
+  <h1>Todo</h1>
+  <p>할 일을 기록해보세요!</p>
+  
+  <!-- 투두 추가 UI -->
+  <form id="todo-form">
+    
+    <input id="todo-input" type="text" placeholder="할 일을 입력하세요" required>
+
+    <select id="todo-priority">
+      <option value="high">중요</option>
+      <option value="medium">보통</option>
+      <option value="low">나중에</option>
+    </select>
+
+    <button type="submit">추가</button>
+
+  </form>
+  
+  <!-- 투두 목록 UI -->
+  <ul id="todo-list"></ul>
+
+  <a href="index.html">대시보드로 돌아가기</a>
 </body>
 </html>
